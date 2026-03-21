@@ -11,6 +11,7 @@
       {
         "keyword": "criar",
         "category": "engenheiro",
+        "path": "src/agentes/ativos/engenheiro_agente_SRC_GL.py",
         "sota_function": "Code Generation & Refactor",
         "tier": 2,
         "tags": ["dev", "src", "refactor"]
@@ -18,6 +19,7 @@
       {
         "keyword": "pesquisar",
         "category": "pesquisador",
+        "path": "src/agentes/ativos/pesquisador_agente_SRC_GL.py",
         "sota_function": "Deep Web Synthesis",
         "tier": 2,
         "tags": ["research", "web", "docs"]
@@ -25,6 +27,7 @@
       {
         "keyword": "auditar",
         "category": "auditor",
+        "path": "src/agentes/ativos/auditor_agente_SRC_GL.py",
         "sota_function": "Security / Logic Verification",
         "tier": 2,
         "tags": ["security", "audit", "dna"]
@@ -32,9 +35,18 @@
       {
         "keyword": "corrigir",
         "category": "autocorrecao",
+        "path": "src/agentes/ativos/autocorrecao_agente_SRC_GL.py",
         "sota_function": "Autonomous Continuous Loop",
         "tier": 2,
         "tags": ["fix", "loop", "r2d2"]
+      },
+      {
+        "keyword": "biblioteca",
+        "category": "bibliotecario",
+        "path": "src/agentes/ativos/bibliotecario_agente_SRC_GL.py",
+        "sota_function": "Integrity & Documentation",
+        "tier": 1,
+        "tags": ["docs", "snap", "audit"]
       }
     ]
   }

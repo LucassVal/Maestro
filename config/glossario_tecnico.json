@@ -11,6 +11,7 @@
       {
         "name": "SOTA",
         "definition": "Estado da Arte (State of the Art)",
+        "path": "docs/PROTOCOLO_TRABALHO_SOTA.md",
         "sota_function": "System Standard Performance",
         "tier": 1,
         "tags": ["benchmark", "standard"]
@@ -18,6 +19,7 @@
       {
         "name": "DNA",
         "definition": "Padrão de integridade e pureza do repositório",
+        "path": "DNA_AUDIT_REPORT_v46_5.md",
         "sota_function": "Registry Integrity",
         "tier": 1,
         "tags": ["compliance", "audit"]
@@ -25,16 +27,18 @@
       {
         "name": "Codex",
         "definition": "Fonte central de verdade técnica e arquitetura",
+        "path": "docs/CODICE_SOTA_2026.md",
         "sota_function": "Knowledge Gateway",
         "tier": 1,
         "tags": ["memory", "RAG"]
       },
       {
-        "name": "MoE",
-        "definition": "Mistura de Especialistas (Mixture of Experts)",
-        "sota_function": "IA Orchestration",
+        "name": "Registry",
+        "definition": "Matriz de 9 Colunas (Inventário Ativo)",
+        "path": "GENIO_FILE_REGISTRE_.md",
+        "sota_function": "Core Inventory",
         "tier": 1,
-        "tags": ["cortex", "routing"]
+        "tags": ["index", "mapping"]
       }
     ]
   }
