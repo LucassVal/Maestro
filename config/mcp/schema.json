@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Manifesto MCP Gênio LLM",
+  "description": "Estrutura padrão para autodescrição de agentes e núcleos",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "role": { "type": "string", "enum": ["Core", "Major", "Soldier", "Guardian"] },
+    "tier": { "type": "string", "enum": ["standard", "agile", "thinking", "fast_track"] },
+    "hardware_target": { "type": "string", "enum": ["RTX_3050", "Intel_Iris_Xe", "CPU_Cloud"] },
+    "capabilities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["name", "version", "role", "hardware_target"]
+}

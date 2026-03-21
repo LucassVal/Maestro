@@ -1,0 +1,11 @@
+{
+  "termos": {
+    "kernel": "núcleo do sistema",
+    "agente": "módulo de IA especializado",
+    "manifesto": "arquivo de autodescrição MCP",
+    "event_store": "barramento de eventos persistente",
+    "SOTA": "Estado da Arte (State of the Art)",
+    "GL": "Gênio LLM",
+    "MoE": "Mistura de Especialistas (Mixture of Experts)"
+  }
+}

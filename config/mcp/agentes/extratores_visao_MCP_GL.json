@@ -1,0 +1,9 @@
+{
+    "id": "agente_visao_GL",
+    "role": "Soldado de Visão",
+    "modelo": "qwen2-vl:7b",
+    "hardware": "gpu_rtx",
+    "interface": "executar(entrada)",
+    "descricao": "Analisa imagens, realiza OCR em documentos escaneados e descreve elementos visuais complexos.",
+    "capabilities": ["OCR", "Image Description", "Graphic Analysis"]
+}

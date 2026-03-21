@@ -1,0 +1,20 @@
+{
+    "testes_regressao": [
+        {
+            "id": "ping_ollama",
+            "descricao": "Verificar se Ollama está respondendo",
+            "comando": "ollama list",
+            "esperado": "NAME"
+        },
+        {
+            "id": "check_gpu",
+            "descricao": "Verificar disponibilidade de GPU",
+            "comando": "nvidia-smi",
+            "esperado": "RTX 3050"
+        }
+    ],
+    "thresholds_performance": {
+        "max_vram_usage_percent": 90,
+        "max_cpu_usage_percent": 80
+    }
+}

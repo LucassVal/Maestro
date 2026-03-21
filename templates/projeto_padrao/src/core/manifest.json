@@ -1,0 +1,10 @@
+{
+  "layer": "Core",
+  "description": "Cérebro e Memória Central",
+  "components": {
+    "orchestrator": "operario_coringa.py",
+    "memory": "event_store.py",
+    "engine": "parrudo_core.py"
+  },
+  "status": "stable"
+}

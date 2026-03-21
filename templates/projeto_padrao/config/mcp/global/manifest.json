@@ -1,0 +1,14 @@
+{
+  "project_name": "Genio LLM",
+  "version": "25.0",
+  "architecture": "Medusa/White Label",
+  "root_path": ".",
+  "cortex": "config/cortex.json",
+  "layers": {
+    "core": "src/core",
+    "agents": "src/agentes",
+    "mcp": "config/mcp",
+    "data": ".panda"
+  },
+  "status": "ready"
+}

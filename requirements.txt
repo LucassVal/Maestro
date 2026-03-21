@@ -1,0 +1,7 @@
+psutil
+nvidia-ml-py3
+requests
+pillow
+opencv-python
+numpy
+pyyaml

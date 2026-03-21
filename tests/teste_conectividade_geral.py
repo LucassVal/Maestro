@@ -1,0 +1,3 @@
+import socket
+import requests
+import time def log_gl(msg): print(f"[{time.strftime('%H:%M:%S')}] [[RADAR] PING_GERAL] {msg}") def testar_conectividade(): log_gl("Starting Diagn stico Global...") # 1. Ollama (61434) s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) s.settimeout(2) try: s.connect(("localhost", 11434)) log_gl("[OK] Ollama Local (11434): ONLINE") except: log_gl("[ERR] Ollama Local: OFFLINE") finally: s.close() # 2. Internet (Google DNS) try: requests.get("https://8.8.8.8", timeout=2) log_gl("[OK] Internet: ACESSO OK") except: log_gl("[WARN] Internet: SEM CONEX O (Modo Offline-First Ativo)") if __name__ == "__main__": testar_conectividade()

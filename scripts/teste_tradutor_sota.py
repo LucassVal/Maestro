@@ -1,0 +1,5 @@
+import os
+import sys
+import traceback # Caminho raiz absoluto
+raiz = r"c:\Users\Lucas Val rio\Desktop\MODELO GENIO LLM"
+log_path = os.path.join(raiz, "teste_tradutor_debug.txt") def log(msg): with open(log_path, "a", encoding="utf-8") as f: f.write(f"{msg}\n") f.flush() try: if os.path.exists(log_path): os.remove(log_path) log("Starting depura o...") log(f"CWD: {os.getcwd()}") log(f"Python: {sys.version}") log("Adicionando caminhos...") sys.path.append(raiz) sys.path.append(os.path.join(raiz, "src")) log("Tentando importar ollama...") import ollama log(f"Ollama importado. Tentando listar modelos...") try: modelos = ollama.list() log(f"Success! Modelos: {len(modelos.get('models', []))}") except Exception as e: log(f"Errorrr ao listar modelos (Ollama Offline?): {e}") log("Tentando importar Regente...") from src.core.operario_coringa import iniciar_missao log("Regente importado. Disparando tradu o...") prompt = "traduza 'Hello SOTA' para portugu s" res = iniciar_missao(prompt) log(f"RESULTADO: {res}") log("FIM DO TESTE COM SUCESSO.") except Exception: log(f"FALHA CATASTR FICA:\n{traceback.format_exc()}")

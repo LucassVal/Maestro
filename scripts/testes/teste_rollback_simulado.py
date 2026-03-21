@@ -1,0 +1,6 @@
+import os
+import json
+import shutil
+import time
+from auto_atualizacao import AutoAtualizacao
+from metricas_evolucao import MetricasEvolucao def simular_crise_e_cura(): print(" [SIMULA O] Starting Crise Controlada...") # 1. Garante backup do estado est vel aa = AutoAtualizacao() path_consciencia = ".panda/memory/consciencia_global.json" aa.backup_atomico([path_consciencia]) print(" Estado est vel preservado.") # 2. Injeta regress o artificial na consci ncia print(" Injetando queda de performance (sucesso -> 20%)...") with open(path_consciencia, "r", encoding="utf-8") as f: data = json.load(f) # For a uma regress o massiva data["metricas"]["sucesso_avg"] = 0.90 data["metricas"]["taxa_sucesso"] = 0.20 data["metricas"]["analises_recentes"] = [0.2] * 5 with open(path_consciencia, "w", encoding="utf-8") as f: json.dump(data, f, indent=4) # 3. Executa detector de regress o me = MetricasEvolucao() kpis = me.calcular_kpis() sinal = kpis.get("sinalizador") print(f"[RADAR] Sinal Detetado: {sinal.upper()}") if sinal == "red": print(" Acionando cura autom tica...") res = aa.realizar_rollback() print(f" Cura: {res}") else: print("[ERR] Failure: O sinal de regress o n o disparou como VERMELHO.") if __name__ == "__main__": simular_crise_e_cura()

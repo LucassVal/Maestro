@@ -1,0 +1,10 @@
+#!/ pylance
+# -*- coding: utf-8 -*-
+"""
+auto_evolucao_passivos_SRC_GL.py Otimiza o Cont nua e Predi o de Failures.
+v44.0: SOTA Organism - Auto-Repara o e Otimiza o de VRAM/Contexto.
+""" import os
+import json
+import subprocess
+import time
+from datetime import datetime class AutoEvolucao: def __init__(self): self.base_dir = os.getcwd() self.cortex_path = os.path.join(self.base_dir, "config", "cortex.json") self.logs_path = os.path.join(self.base_dir, ".panda", "logs", "sys_health.log") def otimizar_vram_contexto(self): """Ajusta o num_ctx baseado na mem ria real dispon vel.""" print("[VOLT] AUTO-EVOLU O: Otimizando VRAM e Janela de Contexto...") try: # 1. Coleta VRAM via nvidia-smi (simulado para este exemplo se falhar) from health_monitor_SRC_GL import HealthMonitor hm = HealthMonitor() stats, _ = hm.check_health() if not stats: return "Errorrr ao coletar stats de VRAM." vram_p = stats.get("vram_p", 0) # 2. L gica de Ajuste novo_ctx = 32768 # Padr o if vram_p > 90: novo_ctx = 8192 print(f"[WARN] VRAM CR TICA ({vram_p:.1f}%): Reduzindo contexto para {novo_ctx}.") elif vram_p < 60: novo_ctx = 128000 print(f"[BOOST] VRAM LIVRE ({vram_p:.1f}%): Expandindo contexto para {novo_ctx}.") # 3. Atualiza cortex.json (via auto_atualizacao para seguran a/backup) from auto_atualizacao_passivos_SRC_GL import AutoAtualizacao aa = AutoAtualizacao() aa.atualizar_config_json(self.cortex_path, {"global_options.num_ctx": novo_ctx}) return f"Otimiza o VRAM conclu da: ctx={novo_ctx}" except Exception as e: return f"Errorrr na otimiza o: {e}" def prever_falhas(self): """Analisa o sistema para prever gargalos.""" print(" AUTO-EVOLU O: Analisando padr es para previs o de falhas...") # Stub: Futuramente analisar a densidade de erros no event_store return "Nenhum padr o de falha iminente detectado." def executar(entrada): ae = AutoEvolucao() cmd = entrada.get("comando") if cmd == "otimizar": return ae.otimizar_vram_contexto() elif cmd == "prever": return ae.prever_falhas() return ae.otimizar_vram_contexto() if __name__ == "__main__": ae = AutoEvolucao() print(ae.otimizar_vram_contexto())

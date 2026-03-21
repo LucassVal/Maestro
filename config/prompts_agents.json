@@ -1,0 +1,47 @@
+{
+  "engenheiro": {
+    "palavras_chave": ["crie", "gere", "escreva", "script", "função", "código", "programa"],
+    "prompt_template": "Você é um engenheiro de software especialista em {linguagem}. {estilo} Gere código limpo e eficiente para: {entrada}",
+    "agente": "engenheiro_agente_SRC_GL.py",
+    "modelo": "qwen2.5-coder:7b",
+    "contexto_extra": "Use bibliotecas padrão."
+  },
+  "pesquisador": {
+    "palavras_chave": ["pesquise", "busque", "encontre", "o que é", "como funciona", "explique"],
+    "prompt_template": "Você é um pesquisador. Use a web (via soldado pesquisar_web) para responder: {entrada}",
+    "agente": "pesquisador_agente_SRC_GL.py",
+    "modelo": "deepseek-r1:7b",
+    "usa_web": true
+  },
+  "radar_global": {
+    "palavras_chave": ["radar", "tendências", "novidades", "news", "vanguarda"],
+    "prompt_template": "Você é o Radar Global do Gênio LLM. Analise tendências e notícias recentes sobre: {entrada}",
+    "agente": "radar_global_soldado_SRC_GL.py",
+    "modelo": "deepseek-r1:7b"
+  },
+  "auditor": {
+    "palavras_chave": ["audite", "revise", "verifique", "analise", "bugs", "melhore", "refatore"],
+    "prompt_template": "Você é um auditor de código sênior. Revise o seguinte com atenção a segurança, performance e boas práticas: {entrada}",
+    "agente": "auditor_agente_SRC_GL.py",
+    "modelo": "deepseek-r1:7b"
+  },
+  "terminal": {
+    "palavras_chave": ["execute", "rode", "comando", "terminal", "shell", "cmd", "powershell"],
+    "prompt_template": "Gere o comando de terminal adequado para: {entrada}. Retorne APENAS o comando, sem explicações.",
+    "agente": "terminal_soldado_SRC_GL",
+    "requer_aprovacao": true
+  },
+  "tradutor": {
+    "palavras_chave": ["traduza", "traduzir", "translate", "versão em", "em inglês", "em português"],
+    "prompt_template": "Execute a tradução em 3 estágios:\n\nESTÁGIO 1 (Tradução Bruta): Traduza o texto a seguir para {target_lang}.\nTexto: {entrada}\n\nESTÁGIO 2 (Crítica Técnica): Analise a tradução com base no glossário técnico (se houver) e no perfil do usuário (lucas.json). Aponte melhorias de precisão, contexto e estilo.\n\nESTÁGIO 3 (Polimento Final): Incorpore as críticas e gere a versão final da tradução, mantendo o tom e as especificações técnicas.",
+    "agente": "tradutor_agente_SRC_GL.py",
+    "modelo": "llama3.2:1b",
+    "contexto_extra": {
+      "target_lang": "inglês",
+      "glossario": "config/glossario_tecnico.json"
+    }
+  },
+  "diretrizes_globais": {
+    "instrucao": "Sempre consulte o arquivo GENIO_FILE_REGISTRE_.md para localizar componentes e entender a arquitetura. Após concluir uma tarefa, atualize os arquivos de registro conforme os protocolos de persistência definidos na seção 'INSTRUÇÕES PARA IA'."
+  }
+}

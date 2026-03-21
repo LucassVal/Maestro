@@ -1,0 +1,10 @@
+{
+  "layer": "Agents",
+  "description": "Músculos do sistema - Agentes Ativos e Passivos",
+  "sub_directories": {
+    "ativos": "Agentes reativos e executores",
+    "passivos": "Soldados e ferramentas de suporte"
+  },
+  "entry_point": "src/agentes/ativos/agente_reitor.py",
+  "mcp_type": "distributed"
+}

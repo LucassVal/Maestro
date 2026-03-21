@@ -1,0 +1,11 @@
+{
+  "layer": "Core",
+  "description": "Cérebro e Memória Central",
+  "components": {
+    "orchestrator": "regente_sota_CORE_GL.py",
+    "memory": "eventos_sistema_CORE_GL.py",
+    "engine": "kernel_kernel_genio_CORE_GL_GL.py"
+  },
+  "status": "stable"
+}
+

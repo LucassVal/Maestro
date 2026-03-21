@@ -1,0 +1,83 @@
+Para forçar o Qwen3 a rodar exclusivamente em CPU + memória virtual (swap) , você precisa criar um Modelfile personalizado com o parâmetro num_gpu 0. Isso impede que qualquer camada do modelo seja carregada na GPU, forçando-o a usar CPU/RAM e, quando a RAM física acabar, o sistema operacional fará o swap automaticamente .
+
+Aqui está o comando e o passo a passo completos, alinhados com a arquitetura Parrudo que desenvolvemos:
+
+⚙️ Comando para Executar Qwen3 Apenas em CPU/Swap
+
+1. Criar o Modelfile
+   Crie um arquivo chamado Modelfile_qwen3_cpu (sem extensão) com o seguinte conteúdo:
+
+dockerfile
+FROM qwen3:8b
+PARAMETER num_gpu 0 # Zera o uso de GPU
+PARAMETER num_ctx 8192 # Contexto compatível com swap
+PARAMETER temperature 0.6 # Opcional - consistência
+Explicação dos parâmetros :
+
+num_gpu 0: Força todas as camadas a rodarem na CPU. Se não especificado, o Ollama tenta usar GPU.
+
+num_ctx 8192: Mantém o contexto em 8k tokens para equilibrar desempenho e uso de memória.
+
+temperature 0.6: Ajuste opcional para respostas mais determinísticas.
+
+2. Criar o modelo personalizado
+   No terminal, execute:
+
+bash
+ollama create qwen3-cpu -f Modelfile_qwen3_cpu
+Isso criará um modelo chamado qwen3-cpu com a configuração desejada.
+
+3. Executar o modelo
+   Agora você pode rodar:
+
+bash
+ollama run qwen3-cpu "Seu prompt aqui"
+Ou, se preferir usar via API/script no seu sistema Parrudo:
+
+python
+
+# No operario coringa.py, ao chamar o modelo:
+
+ollama.generate(model="qwen3-cpu", prompt=user_prompt) 4. Verificar se está rodando em CPU
+Use o comando ollama ps para confirmar:
+
+bash
+ollama ps
+A saída deve mostrar algo como:
+
+text
+NAME ID SIZE PROCESSOR UNTIL
+qwen3-cpu 500a1f067a9f 6.5 GB 100% CPU 4 minutes
+O campo PROCESSOR deve indicar 100% CPU .
+
+🧠 Por que isso é importante no seu sistema?
+Na arquitetura Parrudo, você tem duas camadas principais:
+
+Componente Hardware Função
+Supremo (Qwen 3) CPU/Swap (num_gpu 0) Estratégia, análise de logs, planejamento de longo prazo
+General (Qwen3 8B) VRAM (padrão) Execução tática, decomposição de tarefas
+Agora, com o comando acima, você pode também colocar o General em CPU/swap se necessário (por exemplo, para liberar VRAM para outros modelos), mas lembre-se: o desempenho será mais lento .
+
+Exemplo de uso no fluxo Parrudo:
+python
+
+# No dispatcher, se quiser forçar General em CPU para missões específicas:
+
+if modo_economia:
+resposta = ollama.generate(model="qwen3-cpu", prompt=user_prompt)
+else:
+resposta = ollama.generate(model="qwen3:8b", prompt=user_prompt)
+🔄 Resumo dos Comandos
+Ação Comando
+Criar modelo CPU-only ollama create qwen3-cpu -f Modelfile_qwen3_cpu
+Executar ollama run qwen3-cpu "prompt"
+Verificar execução ollama ps
+Listar modelos ollama list
+📌 Notas Importantes
+Desempenho: Modelos rodando em CPU/Swap serão mais lentos (tipicamente 10-20 tokens/s) , mas para tarefas de supervisão/estratégia isso é aceitável.
+
+Swap: Seu sistema usará automaticamente o arquivo de paginação se a RAM acabar. Certifique-se de ter espaço em disco suficiente (o modelo Qwen3 8B Q4_K_M ocupa ~6.5 GB em RAM) .
+
+Otimização: Para melhor desempenho em CPU, use modelos quantizados (Q4_K_M) – o padrão do Ollama já é quantizado .
+
+Se quiser integrar isso automaticamente ao colono_daemon.py para alternar modos conforme a disponibilidade de VRAM, posso ajudar com o código! 🚀

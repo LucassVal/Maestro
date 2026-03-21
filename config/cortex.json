@@ -1,0 +1,17 @@
+{
+    "versao": "46.2",
+    "hardware_perfil": "NVIDIA RTX",
+    "cpu_usage": "Parrudo",
+    "gpu_layers": 32,
+    "turbo_context": 1600000,
+    "tier_config": {
+        "tiers": {
+            "high_command": "qwen3:latest",
+            "elite": "deepseek-r1:7b",
+            "standard": "qwen2.5-coder:7b",
+            "sentinel": "llama3.2:1b",
+            "vision": "ahmadwaqar/smolvlm2-2.2b-instruct"
+        },
+        "reserve": ["nemotron:latest"]
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "agente": "especialista_ollama_SRC_GL",
+  "versao": "1.0.0",
+  "descricao": "Especialista em APIs, CLI e Modelfiles do Ollama. Consultor de hardware e otimização de modelos.",
+  "capacidades": [
+    "consulta_api",
+    "parametrizacao_modelfile",
+    "debug_servidor_ollama",
+    "otimizacao_vram_iris"
+  ],
+  "localizacao": "src/agentes/passivos/especialista_ollama_soldado_SRC_GL.py",
+  "hardware_prioridade": "cpu",
+  "mcp_standard": "v2.0"
+}

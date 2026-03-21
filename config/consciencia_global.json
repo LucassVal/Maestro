@@ -1,0 +1,30 @@
+{
+    "ultima_atualizacao": "2026-03-19 11:06:09",
+    "metricas": {
+        "total_missoes": 8,
+        "taxa_sucesso": 0.0,
+        "tempo_medio_resposta_segundos": 0.0,
+        "reuso_bibliotecas": 0,
+        "timestamp_analise": "2026-03-19 11:06:09"
+    },
+    "objetivos_ativos": [
+        {
+            "descricao": "Estabelecer Supremo Comando (v8.0)",
+            "status": "em_andamento",
+            "prioridade": "maxima"
+        }
+    ],
+    "sugestoes_pendentes": [],
+    "saude_sistema": {
+        "vram_livre_mb": 0,
+        "temperatura_gpu_c": 0,
+        "modulos_carregados": [
+            "alto-comando",
+            "qwen3:8b"
+        ]
+    },
+    "sota_pulse": {
+        "timestamp": 1773968546.600274,
+        "top_trend": "Qwen 3.5 9B superando modelos 13x maiores em racioc\u00ednio."
+    }
+}

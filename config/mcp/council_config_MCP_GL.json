@@ -1,0 +1,33 @@
+{
+  "mcp_version": "2.0",
+  "node_id": "genio_council_hub",
+  "name": "Conselho de Agentes GENIO LLM",
+  "description": "Orquestração multidisciplinar para decisões SOTA.",
+  "tools": [
+    {
+      "name": "solicitar_consenso",
+      "agent": "moderador_agente_SRC_GL",
+      "params": ["missao_id", "comando", "contribuicoes"]
+    },
+    {
+      "name": "analise_tecnica",
+      "agent": "engenheiro_agente_SRC_GL",
+      "params": ["codigo", "contexto"]
+    },
+    {
+      "name": "auditoria_seguranca",
+      "agent": "auditor_agente_SRC_GL",
+      "params": ["logs", "targets"]
+    },
+    {
+      "name": "manutencao_biblioteca",
+      "agent": "bibliotecario_agente_SRC_GL",
+      "params": ["modo", "missao_id"]
+    }
+  ],
+  "governance": {
+    "voice_compliance": "lucas.json v4.0.0",
+    "hardware_affinity": "iGPU Iris (Passive) / RTX (Active)"
+  }
+}
+
