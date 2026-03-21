@@ -21,7 +21,7 @@ wheels/
 .installed.cfg
 *.egg
 
-# Genio LLM Gold Specific
+# Genio LLM Specific
 .panda/
 .DS_Store
 *.log
@@ -31,8 +31,24 @@ tmp/
 venv/
 .env
 
-# Sanity Check for Public Distrib
-Lucas.json
-*.tmp
+# Founder Private Reference & Local Memory
+archive/Lucas.json
+docs/founder_reference/
+GENIO_PESSOAL_REFERENCE/
+.panda/memory/event_store/
+.panda/learned/
+.panda/backups/
+.panda/propostas/
+.panda/vanguarda/
+.panda/visualizacoes/
+.panda/cache/
+.panda/extensions/
+.panda/brain/
+.panda/logs/
+.panda/benchmarks/
+.panda/vs_bridge/
+
+# Scripts temporários e de teste local
 tests/data_smoke/
 scripts/*_temp.py
+*.tmp

@@ -4,12 +4,50 @@
 
 ---
 
+## 🛡️ Dual-Repo Sovereignty & Git Rules (MCP Native)
+The project is split into two sovereignty levels to balance development depth and public safety:
+1. **LAB (Private)**: `https://github.com/LucassVal/Genio-llm-private`. Full codebase, research, and learning logs.
+2. **GOLD (Public)**: `https://github.com/LucassVal/Genio-LLM`. Purified White Label version (Chameleon Hub).
+
+### Git Hygiene Rules:
+- **.gitignore**: The Master Registry is strictly protected (see `.gitignore`). Emojis and absolute paths are forbidden in production strings.
+- **Sanitization**: Local session files and personal data (e.g., `Lucas.json`) are automatically ignored or archived in `.panda/`.
+- **Sync**: Use `python scripts/chameleon_sync.py` to overflow intelligence from LAB to GOLD before any public release.
+- **MCP Reading**: Agents must identify their current workspace (`MODELO GENIO LLM` vs `GENIO-LLM`) before suggesting any Git action.
+
+---
+
 ## 🚀 Vision
 
 - **Sovereign Digital Infrastructure**: Run your own AI army locally. No data leaves your machine, no token bills.
 - **Hardware‑Friendly**: Optimized for modest setups (i5, 16GB RAM, RTX 3050 4GB) but scales with better hardware.
 - **Hybrid Intelligence**: Combines vertical specialists (engineer, auditor, researcher) with horizontal research groups (consensus‑based multi‑agent reasoning).
 - **Self‑Improving**: Continuous learning via auto‑correction, self‑play, and evolutionary metrics.
+
+---
+
+### 🛡️ Project Badges
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Status: SOTA](https://img.shields.io/badge/Status-SOTA%20Active-brightgreen)
+![Arch: Chameleon](https://img.shields.io/badge/Arch-Chameleon%20White--Label-orange)
+![Privacy: Sovereign](https://img.shields.io/badge/Privacy-100%25%20Offline-blueviolet)
+
+### 🤖 LLM Arsenal (The Generals)
+![Alto Comando](https://img.shields.io/badge/Alto%20Comando-Qwen%203%208B-blue)
+![Auditoria](https://img.shields.io/badge/Auditoria-DeepSeek%20R1%207B-red)
+![Engenharia](https://img.shields.io/badge/Engenharia-Qwen%202.5--Coder%207B-green)
+![Sentinela](https://img.shields.io/badge/Sentinela-Llama%203.2%201B-blueviolet)
+
+### 💻 Optimized Hardware Setup
+![CPU](https://img.shields.io/badge/CPU-Intel%20Core%20i5-blue)
+![RAM](https://img.shields.io/badge/RAM-16GB%20DDR4-orange)
+![GPU](https://img.shields.io/badge/GPU-RTX%203050%204GB-green)
+![iGPU](https://img.shields.io/badge/iGPU-Intel%20Iris%20Xe-blue)
+
+### 📚 Support Materials
+- [Master Códice v47.3](docs/CODICE_SOTA_2026.md) - Full Technical Reference.
+- [Working Protocol](docs/PROTOCOLO_TRABALHO_WHITE_LABEL.md) - Agentic workflow rules.
+- [Development Log](task.md) - Current roadmap & milestones.
 
 ---
 

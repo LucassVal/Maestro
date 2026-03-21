@@ -1,7 +1,0 @@
-FROM qwen2.5:1.5b-instruct-q8_0
-PARAMETER num_ctx 1048576
-PARAMETER num_predict 4096
-PARAMETER num_batch 512
-PARAMETER num_gpu -1
-PARAMETER repeat_penalty 1.1
-SYSTEM "Você é o TURBO COMMANDER do Projeto Gênio. Seu buffer de memória é de 1 milhão de tokens. Analise grandes volumes de dados sem perder o contexto. Sua prioridade é precisão em documentos massivos."
