@@ -79,10 +79,90 @@ Gerenciamento dinâmico de 4GB VRAM:
 - **BOOST**: Performance SOTA.
 
 ### Repositórios de Soberania
-- **Privado**: `Genio-llm-private` (Versão LAB).
+- **Privado**: [RESTRITO] (Versão LAB).
 - **Público**: `Genio-LLM` (Versão GOLD White Label).
 
 ---
 
+---
+
+## ⚙️ CAPÍTULO VI: MERGULHO PROFUNDO (MECÂNICAS DE INTERAÇÃO)
+
+### 6.1 Loop de Autocorreção R2D2 (O Mecanismo de Cura)
+O sistema não apenas executa; ele aprende com o erro. O fluxo é:
+1. **Detecção**: O Evaluator identifica falha no terminal ou no retorno da LLM.
+2. **Reflexão (Search)**: O Agente R2D2 gera um `hash` do erro e busca no `.panda/learned/` por soluções anteriores.
+3. **Patch**: Caso não exista, ele pesquisa logs de sistema e tenta aplicar um "Hotfix".
+4. **Learning**: Após sucesso (score ≥ 8/10), a solução é indexada para uso futuro.
+   - *Exemplo*: Erro de biblioteca Python ausente gera instalação automática via `pip` e registro na biblioteca de correções.
+
+### 6.2 VRAM Dynamo & Prioridade (Gestão de Calor)
+O Gênio gerencia 4GB de VRAM através do `vram_optimizer`:
+- **Rodízio**: Alterna entre Agente Engenheiro (Escrita) e Auditor (Revisão).
+- **Prioridade**: Tarefas em andamento (Foreground) barram novas alocações por 500ms para evitar OOM (Out of Memory).
+- **Offloading**: Quando a VRAM atinge 90%, o sistema move o KV Cache para RAM/CPU.
+
+### 6.3 Conselho de Guerra & Consenso (O Moderador)
+Invocável via comando `conselho: [prompt]`, esta mecânica utiliza:
+- **Votação Ponderada**: Cada agente tem um peso baseado em sua taxa de sucesso histórica.
+- **Síntese**: O Moderador (Gemma 2) analisa as divergências entre Qwen e DeepSeek e gera um "Veredito Consolidado".
+
+### 6.4 Airlock: O Protocolo de Segurança Ativa
+Nenhum comando destrutivo (RM, DEL, GIT PUSH) ocorre sem supervisão:
+1. **Interceptação**: O sensor detecta comando de risco.
+2. **Proposta (JSON)**: Gera um arquivo em `config/proposals/pending/`.
+3. **Aprovação**: O usuário recebe notificação na GUI/CLI e "carimba" a ação.
+
+### 6.5 Mecânicas de Acesso ao Codex e Normatização
+
+#### 6.5.1 O Codex como Fonte de Verdade
+O Codex (`GENIO_FILE_REGISTRE_.md`) é o coração autodescritivo do sistema. Ele não é apenas um documento estático; é consumido por agentes em tempo real para:
+- **Localizar componentes**: Cada agente ou sensor consulta o Codex para saber onde encontrar outros módulos via Path Agnostic discovery.
+- **Validar dependências**: Antes de iniciar uma missão, o regente verifica no Codex se todos os agentes necessários estão disponíveis e certificados.
+- **Orientar novos agentes**: O próprio sistema pode ler o Codex para se auto‑configurar e entender a topologia da rede.
+
+#### 6.5.2 Acesso Programático e Léxico
+- **Memória em Cache**: O `agente_bibliotecario` mantém uma cópia em memória do Codex e a atualiza automaticamente quando o arquivo físico é modificado.
+- **API Interna**: O `kernel_genio` expõe a função `consultar_codex(categoria, nome)` que retorna o caminho absoluto/relativo e as capacidades de um componente.
+- **Roteamento Semântico**: O `classificador_roteamento` usa o Codex para mapear palavras‑chave a agentes especializados, garantindo a normatização do léxico técnico.
+
+#### 6.5.3 Exemplo de Uso no Código (Python):
+```python
+# Exemplo de consulta dinâmica ao Codex para ativação de Agente
+from core.kernel_genio import consultar_codex
+
+def ativar_agente_especialista(missao):
+    # O sistema traduz a intenção para uma categoria do Codex
+    detalhes = consultar_codex(categoria="ativos", nome="agente_engenheiro")
+    if detalhes["status"] == "CERTIFICADO":
+        caminho = detalhes["path"]
+        # Inicia a instância baseada no registro mestre
+        print(f"[OK] Agente localizado em: {caminho}")
+```
+
+### 6.6 Busca Semântica em Bibliotecas (RAG Interno)
+Antes de criar código do zero, o Agente Engenheiro consulta `.panda/libraries/`:
+- **Embeddings**: Utiliza `sentence-transformers` para comparar a intenção do usuário com o arsenal existente.
+- **Reuso**: Se houver similaridade > 0.85, injeta o trecho de código pronto, economizando tokens e tempo.
+
+### 6.7 Taxonomia de Agentes: Ativos vs Passivos
+- **Ativos (Generals)**: Consomem GPU para raciocínio denso (Engenheiro, Auditor).
+- **Passivos (Sensors)**: Operam em background via CPU, monitorando eventos (Bibliotecário, Terminal, Radar).
+- **Interação**: Passivos alimentam o `event_store` e Ativos consomem esses dados para tomar decisões complexas.
+
+### 6.8 Validação de Integridade (O Bibliotecário)
+O `agente_bibliotecario` atua como o sistema imunológico do código:
+- **Snapshot Diferencial**: A cada ciclo de 15 minutos (Colono Daemon), o Bibliotecário compara o estado atual com o último `snapshot` estável.
+- **Auto-Healing**: Se detectada corrupção de arquivos core (`_SRC_GL.py`), ele restaura o backup imediatamente de `.panda/backups/`.
+- **Certificação de Manifesto**: Garante que nenhum agente novo seja ativado sem um manifesto MCP válido e auditado.
+
+### 6.9 Barramento de Eventos (Event Store)
+A memória de curto prazo do sistema reside no `event_store.py`:
+- **Pub/Sub SOTA**: Permite que Sensores (Passivos) notifiquem Agentes (Ativos) sem acoplamento direto.
+- **Imutabilidade**: Todos os eventos (sucesso, erro, mudança de VRAM) são registrados como logs imutáveis.
+- **Injeção de Contexto**: O Regente lê os últimos 50 eventos para "dar cor" à próxima tomada de decisão da LLM, reduzindo alucinações.
+
+---
+
 > _"A ordem é a materialização da inteligência."_  
-> **SOTA SUPREME COUNCIL (v47.3)**
+> **SOTA SUPREME COUNCIL (v47.4)**

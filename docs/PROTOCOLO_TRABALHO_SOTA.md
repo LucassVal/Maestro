@@ -135,9 +135,9 @@ Ao término de cada ciclo de trabalho, o agente DEVE:
 1.  **Revisão Final**: Validar se nenhum arquivo ficou com erro de sintaxe.
 2.  **Registro**: Atualizar o `task.md` e o `walkthrough.md`.
 3.  **Push de Soberania (Dual Repo)**: Garantir o espelhamento perfeito em ambos os repositórios:
-    - **Privado (Full Lab)**: `https://github.com/LucassVal/Genio-llm-private` -> Todo o código do Laboratório.
-    - **Público (White Label)**: `https://github.com/LucassVal/Genio-LLM` -> Apenas a pasta `GENIO-LLM` (Gold Hub).
-4.  **Sincronia de Versão**: Garantir que todos os arquivos esttejam na versão do DNA atual (v46.5).
+    - **Privado (Full Lab)**: [ACESSO RESTRITO] -> Todo o código do Laboratório.
+    - **Público (White Label)**: [REPOSITÓRIO GOLD] -> Código purificado para contribuição.
+4.  **Sincronia de Versão**: Garantir que todos os arquivos estejam na versão do DNA atual (v46.5).
 
 ## [ARCHITECTURE] 11. ESTRUTURA CAMALEÃO (WHITE LABEL HUB) 🦎🪐
 O Gênio LLM opera em dois níveis de soberania:
