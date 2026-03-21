@@ -1,4 +1,4 @@
-# 🧠 Gênio LLM – White Label Sovereign AI Orchestrator
+# 🧠 Gênio LLM – White Label Sovereign AI Orchestrator (v47.4)
 
 **Gênio LLM** is a modular, offline‑first AI orchestration system that transforms any Windows computer into a local powerhouse of intelligent agents. It orchestrates multiple open‑source LLMs (via Ollama) to handle coding, auditing, research, document analysis, image/video understanding, and self‑evolution – all without recurring API costs.
 
@@ -34,7 +34,7 @@
 ![iGPU](https://img.shields.io/badge/iGPU-Intel%20Iris%20Xe-blue)
 
 ### 📚 Support Materials
-- [Master Códice v47.3](docs/CODICE_SOTA_2026.md) - Full Technical Reference.
+- [Master Códice v47.4](docs/CODICE_SOTA_2026.md) - Full Technical Reference.
 - [Working Protocol](docs/PROTOCOLO_TRABALHO_WHITE_LABEL.md) - Agentic workflow rules.
 - [Development Log](task.md) - Current roadmap & milestones.
 
@@ -102,9 +102,11 @@
 - **Evolution Metrics**: Tracks success rate, latency, code reuse.
 - **Auto‑Update**: Proposes and applies improvements; can rollback on regression.
 
-### 7. **Dual‑Channel Interaction**
-- **Antigravity (Gemini)**: Strategic mentor – web search, image generation, long‑context reasoning, audit.
-- **VS Code (llm‑vscode)**: Local autocomplete, inline refactoring, real‑time code assistance.
+### 7. **SOTA Deep Mechanics (Chapter VI)**
+- **Loop R2D2**: Autonomous error discovery and self-healing.
+- **VRAM Dynamo**: Dynamic GPU/CPU resource orchestration.
+- **Airlock Protocol**: Human-in-the-loop security for destructive actions.
+- **Codex API**: Programmatic access to the system's "Source of Truth" via `kernel_genio`.
 
 ---
 
@@ -112,8 +114,8 @@
 
 - **v45.3 (Stable)**: Core stabilized, International logs, 49 Agents validated. [DONE]
 - **v45.4 (Audit)**: Identity "GEMINI LLM - FOUNDER" & Mega Audit 100%. [DONE]
-- **v46.5 (DNA & Audit)**: Structured Validation Engine, Semantic Accuracy, Stress 10M+. [DONE] ✅ **9/9 Components Passed**
-- **v47.0 (Packaging)**: Hardware Wizard & Inno Setup Installer. [PENDING]
+- **v46.5 (DNA & Audit)**: Structured Validation Engine, Semantic Accuracy, Stress 10M+. [DONE]
+- **v47.4 (Deep Mechanics)**: Loop R2D2, VRAM Dynamo & Codex API Refinement. [DONE] ✅ **Full SOTA v47.4 Integration**
 - **v48.0 (Connectivity)**: WhatsApp Automation & SaaS Integrations. [PENDING]
 - **v49.0 (Enterprise)**: Google Workspace Hub & Cloud Sync. [PENDING]
 - **v50.0 (Gold Master)**: Official Launch & Final Certification. [PENDING]
