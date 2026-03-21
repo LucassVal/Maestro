@@ -19,7 +19,7 @@
       {
         "name": "DNA",
         "definition": "Padrão de integridade e pureza do repositório",
-        "path": "DNA_AUDIT_REPORT_v46_5.md",
+        "path": "docs/CODICE_SOTA_2026.md",
         "sota_function": "Registry Integrity",
         "tier": 1,
         "tags": ["compliance", "audit"]

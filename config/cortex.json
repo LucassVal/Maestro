@@ -1,5 +1,11 @@
 {
-    "versao": "46.2",
+    "metadata": {
+        "name": "SOTA Cortex (AI Orchestrator)",
+        "version": "v47.5",
+        "sovereignty": "SOTA 2026",
+        "tier_level": "Core / Orquestrador"
+    },
+    "versao": "47.5",
     "hardware_perfil": "NVIDIA RTX",
     "cpu_usage": "Parrudo",
     "gpu_layers": 32,
