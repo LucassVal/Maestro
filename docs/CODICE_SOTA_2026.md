@@ -162,6 +162,34 @@ A memória de curto prazo do sistema reside no `event_store.py`:
 - **Imutabilidade**: Todos os eventos (sucesso, erro, mudança de VRAM) são registrados como logs imutáveis.
 - **Injeção de Contexto**: O Regente lê os últimos 50 eventos para "dar cor" à próxima tomada de decisão da LLM, reduzindo alucinações.
 
+### 6.10. Mecânicas de Acesso ao Conhecimento (Semantic Routing)
+O Gênio LLM utiliza uma camada de abstração semântica para localizar componentes e processar intenções sem depender de caminhos absolutos ou strings estáticas.
+
+#### 1. O Codex como Fonte de Verdade
+- **Registro Mestre**: `GENIO_FILE_REGISTRE_.md`.
+- **Funcionamento**: O sistema não "chuta" localizações; ele consulta o índice mapeado.
+- **Cache de Memória**: O `agente_bibliotecario` mantém um snapshot do Codex em `.panda/memory/codex_index.json` para acesso de ultra-baixa latência.
+
+#### 2. Roteamento Semântico e Normalização
+- **Configuração**: `config/codex_tecnico.json` (Palavras-chave -> Categoria).
+- **Fluxo de Intent**:
+  1. Texto do usuário é normalizado via **Stemmer**.
+  2. Consulta ao `codex_tecnico.json` para identificar o Agente Ativo responsável.
+  3. Em caso de ambiguidade, o **Qwen 1.5B (Soldado)** atua como classificador de fallback.
+
+#### 3. Padronização JSON SOTA (9 Colunas)
+Todos os arquivos de configuração do ecossistema seguem o **Schema SOTA**, que espelha a Matriz de 9 Colunas:
+- `metadata`: Governança, Versão e Tier.
+- `registry`: Elementos com tags semânticas e nível de autoridade.
+
+#### 4. Acesso Programático (API Interna)
+Agentes podem consultar o conhecimento nativo via:
+```python
+# Exemplo de consulta programática ao Codex
+resultado = kernel_genio.consultar_codex(categoria="engenheiro", palavra="refatorar")
+```
+- **Benefício**: Permite que agentes verifiquem capacidades antes de planejar missões.
+
 ---
 
 > _"A ordem é a materialização da inteligência."_  

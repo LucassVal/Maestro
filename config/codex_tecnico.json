@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "name": "SOTA Technical Codex (Semantic Routing)",
+    "version": "v47.5",
+    "sovereignty": "SOTA 2026",
+    "tier_level": "Core / Gateway",
+    "last_audit": "2026-03-20"
+  },
+  "registry": {
+    "intent_mapping": [
+      {
+        "keyword": "criar",
+        "category": "engenheiro",
+        "sota_function": "Code Generation & Refactor",
+        "tier": 2,
+        "tags": ["dev", "src", "refactor"]
+      },
+      {
+        "keyword": "pesquisar",
+        "category": "pesquisador",
+        "sota_function": "Deep Web Synthesis",
+        "tier": 2,
+        "tags": ["research", "web", "docs"]
+      },
+      {
+        "keyword": "auditar",
+        "category": "auditor",
+        "sota_function": "Security / Logic Verification",
+        "tier": 2,
+        "tags": ["security", "audit", "dna"]
+      },
+      {
+        "keyword": "corrigir",
+        "category": "autocorrecao",
+        "sota_function": "Autonomous Continuous Loop",
+        "tier": 2,
+        "tags": ["fix", "loop", "r2d2"]
+      }
+    ]
+  }
+}
