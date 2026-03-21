@@ -1,0 +1,17 @@
+{
+  "name": "Embaixador",
+  "tier": 3,
+  "model": "qwen2.5:1.5b",
+  "mcp_access": "READ_ONLY",
+  "capabilities": [
+    "simple_query",
+    "translation",
+    "explanation",
+    "manifest_read"
+  ],
+  "restrictions": [
+    "cannot_execute_tools",
+    "cannot_modify_manifests"
+  ],
+  "description": "Interface amigável com o usuário. Traduz e explica planos complexos, respondendo interações diretas sem permissão de execução."
+}

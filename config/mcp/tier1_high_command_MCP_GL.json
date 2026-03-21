@@ -1,0 +1,14 @@
+{
+  "name": "Alto Comando",
+  "tier": 1,
+  "model": "qwen3:8b",
+  "mcp_access": "FULL_ACCESS",
+  "capabilities": [
+    "strategic_planning",
+    "mission_decomposition",
+    "agent_orchestration",
+    "full_manifest_read",
+    "full_manifest_write"
+  ],
+  "description": "Cérebro estratégico do Gênio LLM. Planeja, orquestra e delega tarefas complexas com autoridade total sobre o MCP."
+}

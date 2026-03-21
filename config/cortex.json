@@ -1,35 +1,50 @@
 {
     "metadata": {
         "name": "SOTA Cortex (AI Orchestrator)",
-        "version": "v47.6",
+        "version": "v47.7",
         "sovereignty": "SOTA 2026",
         "tier_level": "Core / Orquestrador"
     },
-    "versao": "47.6",
+    "versao": "47.7",
     "hardware_perfil": "NVIDIA RTX + iGPU Iris",
     "cpu_usage": "Parrudo",
     "gpu_layers": 32,
     "turbo_context": 1600000,
     "tier_config": {
         "tiers": {
-            "alto_comando": {
-                "modelo": "qwen3:8b",
+            "high_command": {
+                "model": "qwen3:8b",
                 "hardware": "cpu",
+                "mcp_manifest": "config/mcp/tier1_high_command_MCP_GL.json",
+                "mcp_access": "FULL_ACCESS",
                 "prioridade": 1
             },
-            "embaixador": {
-                "modelo": "qwen2.5:1.5b",
+            "ambassador": {
+                "model": "qwen2.5:1.5b",
                 "hardware": "igpu",
+                "mcp_manifest": "config/mcp/tier3_ambassador_MCP_GL.json",
+                "mcp_access": "READ_ONLY",
                 "prioridade": 3
             },
-            "executores": {
-                "modelos": ["qwen2.5-coder:7b", "deepseek-r1:7b"],
+            "engineer": {
+                "model": "qwen2.5-coder:7b",
                 "hardware": "gpu",
+                "mcp_manifest": "config/mcp/tier2_experts_MCP_GL.json",
+                "mcp_access": "FULL_ACCESS",
+                "prioridade": 2
+            },
+            "auditor": {
+                "model": "deepseek-r1:7b",
+                "hardware": "gpu",
+                "mcp_manifest": "config/mcp/tier2_experts_MCP_GL.json",
+                "mcp_access": "FULL_ACCESS",
                 "prioridade": 2
             },
             "sentinel": {
-                "modelo": "llama3.2:1b",
+                "model": "llama3.2:1b",
                 "hardware": "igpu",
+                "mcp_manifest": "config/mcp/tier4_soldiers_MCP_GL.json",
+                "mcp_access": "LIMITED",
                 "prioridade": 4
             }
         },

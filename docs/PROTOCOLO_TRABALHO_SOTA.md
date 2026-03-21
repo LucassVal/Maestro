@@ -32,29 +32,37 @@ Whenever starting an interaction, validate the following documents to have the c
 
 ## [CHAIN] 13. HIERARQUIA DE COMANDO SOTA (9-COLUMN MATRIX)
 
-O Gênio LLM opera sob uma **Matriz de Autoridade de 9 Colunas**, onde cada um dos **84 Componentes** é auditado individualmente para Cross-Tier Connectivity.
+O Gênio LLM opera sob uma **Matriz de Autoridade de 9 Colunas**, onde cada componente possui um manifesto MCP que define seu nível de soberania e acesso:
+
+- **Acesso Granular ao MCP**:
+  - **Tier 1 (Alto Comando)**: `FULL_ACCESS` – Pode ler, escrever, orquestrar e modificar o sistema.
+  - **Tier 2 (Especialistas)**: `FULL_ACCESS` – Executam tarefas técnicas complexas (Engenharia, Auditoria).
+  - **Tier 3 (Embaixador)**: `READ_ONLY` – Pode ler manifestos para traduzir planos ao usuário, mas não pode executar ferramentas ou modificar o Core.
+  - **Tier 4 (Soldados)**: `LIMITED` – Acesso restrito apenas à sua função atômica específica.
+
+- **Triagem de Complexidade**:
+  - O **Classificador de Prompts** realiza a triagem automática:
+    - **Tarefas Simples** (horas, tempo, ajuda, explicações triviais) -> Delegadas ao **Embaixador**.
+    - **Tarefas Estratégicas** (gerar código, analisar, auditar, missões) -> Delegadas ao **Alto Comando**.
 
 ```text
-         🪐 [ ALTO COMANDO ] 🪐
-            (Qwen 3: 32B / 72B)
-                   |
+         🪐 [ ALTO COMANDO ] 🪐 (Tier 1)
+            (Qwen 3 / Qwen 2.5 72B)
+                   | (Full Access)
                    v
-         🛡️ [ COMANDO GERAL ] 🛡️
-        (DeepSeek-R1 / Qwen 2.5 7B)
-                   |
+         🛡️ [ COMANDO GERAL ] 🛡️ (Tier 2)
+         (Experts: Engineer, Auditor)
+                   | (Full Access)
          +---------+---------+
          |                   |
-   🧠 [ MENTORIA ]      🤝 [ EMBAIXADOR ]
-    (Qwen 2.5 7B)        (Llama 3.2 3B)
-         |                   |
+   🧠 [ MENTORIA ]      🤝 [ EMBAIXADOR ] (Tier 3)
+     (Antigravity)        (Interface / UI)
+         |                   | (Read-Only)
          v                   v
-   🗡️ [ SOLDADOS ]      📡 [ SENSORES ]
-  (Qwen 1.5B / 3B)     (Llama 3.2 1B)
-         |                   |
+   🗡️ [ SOLDADOS ]      📡 [ SENSORES ] (Tier 4)
+     (Executors)         (I/O, Watcher)
+         |                   | (Limited)
          +---------+---------+
-                   |
-         📜 [ RESERVA TÉCNICA ]
-           (Nemotron / Llama 3)
 ```
 
 ---

@@ -45,6 +45,16 @@ def consultar_codex(categoria=None, palavra=None):
         print(f"[ERR] Codex API call failed: {e}")
     return None
 
+def carregar_manifesto(caminho):
+    """Carrega um manifesto MCP individual para verificação de permissões."""
+    try:
+        if os.path.exists(caminho):
+            with open(caminho, "r", encoding="utf-8") as f:
+                return json.load(f)
+    except Exception as e:
+        print(f"[ERR] Falha ao carregar manifesto {caminho}: {e}")
+    return None
+
 def atualizar_consciencia(metricas):
     """Updates the global consciousness status."""
     if not os.path.exists(os.path.dirname(CONSCIENCIA_FILE)):
