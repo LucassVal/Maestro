@@ -16,7 +16,7 @@ def get_cortex():
                 return json.load(f)
     except: pass
     return {
-        "versao": "46.5",
+        "versao": "47.5",
         "hardware_perfil": "NVIDIA RTX",
         "tier_config": {
             "tiers": {
@@ -26,6 +26,24 @@ def get_cortex():
             }
         }
     }
+
+def consultar_codex(categoria=None, palavra=None):
+    """Programmatic access to the SOTA Technical Codex (v47.5)."""
+    CODEX_TECNICO = os.path.join("config", "codex_tecnico.json")
+    try:
+        if os.path.exists(CODEX_TECNICO):
+            with open(CODEX_TECNICO, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                mapping = data.get("registry", {}).get("intent_mapping", [])
+                
+                for item in mapping:
+                    if palavra and item.get("keyword") == palavra:
+                        if categoria is None or item.get("category") == categoria:
+                            return item
+                return None
+    except Exception as e:
+        print(f"[ERR] Codex API call failed: {e}")
+    return None
 
 def atualizar_consciencia(metricas):
     """Updates the global consciousness status."""
