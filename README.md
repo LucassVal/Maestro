@@ -6,14 +6,15 @@
 
 ## 🛡️ Dual-Repo Sovereignty & Git Rules (MCP Native)
 The project is split into two sovereignty levels to balance development depth and public safety:
-1. **LAB (Private)**: `https://github.com/LucassVal/Genio-llm-private`. Full codebase, research, and learning logs.
-2. **GOLD (Public)**: `https://github.com/LucassVal/Genio-LLM`. Purified White Label version (Chameleon Hub).
+
+- **LAB (Private)**: https://github.com/LucassVal/Genio-llm-private. Full codebase, research, and learning logs.
+- **GOLD (Public)**: https://github.com/LucassVal/Genio-LLM. Purified White Label version (Chameleon Hub).
 
 ### Git Hygiene Rules:
-- **.gitignore**: The Master Registry is strictly protected (see `.gitignore`). Emojis and absolute paths are forbidden in production strings.
-- **Sanitization**: Local session files and personal data (e.g., `Lucas.json`) are automatically ignored or archived in `.panda/`.
-- **Sync**: Use `python scripts/chameleon_sync.py` to overflow intelligence from LAB to GOLD before any public release.
-- **MCP Reading**: Agents must identify their current workspace (`MODELO GENIO LLM` vs `GENIO-LLM`) before suggesting any Git action.
+- **.gitignore**: The Master Registry is strictly protected (see .gitignore). Emojis and absolute paths are forbidden in production strings.
+- **Sanitization**: Local session files and personal data (e.g., Lucas.json) are automatically ignored or archived in .panda/.
+- **Sync**: Use python scripts/chameleon_sync.py to overflow intelligence from LAB to GOLD before any public release.
+- **MCP Reading**: Agents must identify their current workspace (MODELO GENIO LLM vs GENIO-LLM) before suggesting any Git action.
 
 ---
 
