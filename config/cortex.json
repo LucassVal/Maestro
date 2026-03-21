@@ -1,22 +1,37 @@
 {
     "metadata": {
         "name": "SOTA Cortex (AI Orchestrator)",
-        "version": "v47.5",
+        "version": "v47.6",
         "sovereignty": "SOTA 2026",
         "tier_level": "Core / Orquestrador"
     },
-    "versao": "47.5",
-    "hardware_perfil": "NVIDIA RTX",
+    "versao": "47.6",
+    "hardware_perfil": "NVIDIA RTX + iGPU Iris",
     "cpu_usage": "Parrudo",
     "gpu_layers": 32,
     "turbo_context": 1600000,
     "tier_config": {
         "tiers": {
-            "high_command": "qwen3:latest",
-            "elite": "deepseek-r1:7b",
-            "standard": "qwen2.5-coder:7b",
-            "sentinel": "llama3.2:1b",
-            "vision": "ahmadwaqar/smolvlm2-2.2b-instruct"
+            "alto_comando": {
+                "modelo": "qwen3:8b",
+                "hardware": "cpu",
+                "prioridade": 1
+            },
+            "embaixador": {
+                "modelo": "qwen2.5:1.5b",
+                "hardware": "igpu",
+                "prioridade": 3
+            },
+            "executores": {
+                "modelos": ["qwen2.5-coder:7b", "deepseek-r1:7b"],
+                "hardware": "gpu",
+                "prioridade": 2
+            },
+            "sentinel": {
+                "modelo": "llama3.2:1b",
+                "hardware": "igpu",
+                "prioridade": 4
+            }
         },
         "reserve": ["nemotron:latest"]
     }

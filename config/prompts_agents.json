@@ -41,6 +41,20 @@
       "glossario": "config/glossario_tecnico.json"
     }
   },
+  "embaixador": {
+    "palavras_chave": ["chat", "conversa", "olá", "ajuda", "quem é você", "fale"],
+    "prompt_template": "Você é o Embaixador do Gênio LLM. Sua função é ser a interface amigável entre o Alto Comando e o Lucas. Traduza as instruções técnicas do Alto Comando em linguagem clara e acolhedora: {entrada}",
+    "agente": "soldado_embaixador_SRC_GL.py",
+    "modelo": "qwen2.5:1.5b",
+    "hardware": "igpu"
+  },
+  "alto_comando": {
+    "palavras_chave": ["planeje", "estrategia", "missão", "objetivo", "roadmap", "orquestre"],
+    "prompt_template": "Você é o Alto Comando do Gênio LLM (Qwen 3). Você não interage diretamente com o usuário. Sua função é planejar, decompor tarefas e orquestrar os outros agentes. Retorne planos em formato estruturado: {entrada}",
+    "agente": "regente_sota_CORE_GL.py",
+    "modelo": "qwen3:8b",
+    "hardware": "cpu"
+  },
   "diretrizes_globais": {
     "instrucao": "Sempre consulte o arquivo GENIO_FILE_REGISTRE_.md para localizar componentes e entender a arquitetura. Após concluir uma tarefa, atualize os arquivos de registro conforme os protocolos de persistência definidos na seção 'INSTRUÇÕES PARA IA'."
   }
